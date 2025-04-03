@@ -1,50 +1,48 @@
-<repository>
-    <id>jitpack.io</id>
-    <url>https://jitpack.io</url>
-</repository>
-
-<dependency>
-    <groupId>com.github.kangarko</groupId>
-    <artifactId>Foundation</artifactId>
-    <version>6.9.18</version>
-</dependency>
-
-<plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-shade-plugin</artifactId>
-
-    <!-- Change version to the latest one from
-         https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-shade-plugin -->
-    <version>3.5.1</version>
-    <executions>
-        <execution>
-            <phase>package</phase>
-            <goals>
-                <goal>shade</goal>
-            </goals>
-        </execution>
-    </executions>
-    <configuration>
-        <createDependencyReducedPom>false</createDependencyReducedPom>
-        <artifactSet>
-            <includes>
-                <!-- Important: This will ensure only Foundation is shaded to your jar. If you have
-                     other dependencies that should be compiled, duplicate this line for each. 
-                     
-                     ONLY ADD THE LIBRARIES HERE YOU WANT TO BE INCLUDED IN YOUR PLUGIN.JAR
-                     -->
-                <include>com.github.kangarko:Foundation*</include>
-            </includes>
-        </artifactSet>
-        <relocations>
-            <!-- This moves Foundation into your own package in "lib" subpackage to prevent interference. -->
-            <relocation>
-                <pattern>org.mineacademy.fo</pattern>
-                <shadedPattern>your.plugin.main.package.lib</shadedPattern>
-            </relocation>
-        </relocations>
-    </configuration>
-</plugin>
-
-git config --global user.email "BrensonoYT@gmail.com"
-git config --global user.name "Brensono"
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>dev.cibmc.spigot.testplugin</groupId>
+  <artifactId>TestPlugin</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+  <repositories>
+      <repository>
+          <id>spigot-repo</id>
+          <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+      </repository>
+    </repository>
+        <id>papermc</id>
+        <url>https://repo.papermc.io/repository/maven-public/</url>
+    </repository>
+  </repositories>
+  <dependencies>
+      <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.17-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+      </dependency>
+            <groupId>io.papermc.paper"</groupId>
+            <artifactId>paper-api</artifactId>
+            <version>1.21.4-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        <dependency>
+  </dependencies>
+  <build>
+    <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>${project.basedir}/src/main/resources</directory>
+        <includes>
+          <include>plugin.yml</include>
+        </includes>
+      </resource>
+    </resources>
+  </build>
+</project>
