@@ -14,11 +14,11 @@ public class Test extends JavaPlugin implements Listener{
 
     @Override
     public void onEnable() {
-        getLogger().info("Hello, SpigotMC!");
+        getLogger().info("Hello, PaperMC!");
     }
     @Override
     public void onDisable() {
-        getLogger().info("See you again, SpigotMC!");
+        getLogger().info("See you again, PaperMC!");
     }
 }
 
