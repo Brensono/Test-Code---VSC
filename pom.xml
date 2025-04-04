@@ -17,7 +17,6 @@
         <url>https://github.com/Brensono/Test-Code---VSC/</url>
     <repository>
   </repositories>
-
   <dependencies>
       <dependency>
         <groupId>org.spigotmc</groupId>
