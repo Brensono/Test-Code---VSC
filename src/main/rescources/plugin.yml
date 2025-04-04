@@ -24,4 +24,5 @@ commands:
         aliases: [cmd, command]
         permission: permission.node
         permission-message: "You do not have permission to use this command"
+depend: [EssentialsX, EssentialsXChat, EssentialsXSpawn]
 softdepend: [WorldEdit, Vault, TAB]
