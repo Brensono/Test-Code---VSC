@@ -1,0 +1,27 @@
+name: TestPlugin
+version: 1.0.0-SNAPSHOT
+main: src.main.io.papermc.testplugin.Test
+description: This is a Test Plugin!
+author: Brensono
+website: https://github.com/Brensono/Test-Code---VSC/
+api-version: '1.21.4'
+load: STARTUP
+prefix: TestPlugin
+permissions :
+    permission.node:
+        description: "This is a permission node"
+        default: op
+        children:
+            permission.node.child: true
+    another.permission.node:
+        description: "This is another permission node"
+        default: not op
+        default-permission: not op
+commands:
+    command:
+        description: "This is a command"
+        usage: "/command <arg>"
+        aliases: [cmd, command]
+        permission: permission.node
+        permission-message: "You do not have permission to use this command"
+softdepend: [WorldEdit, Vault, TAB]
