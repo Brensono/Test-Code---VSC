@@ -17,7 +17,7 @@ public class Test extends JavaPlugin implements Listener{
     
     @Override
     public void onEnable() {
-        getLogger().info("Hello, PaperMC!");
+        getLogger().info("Hello PaperMC!");
         Bukkit.getPluginManager().registerEvents(this, this);
     }
     @Override
